@@ -46,7 +46,7 @@ class API:
         return None if not self.request else self.json
 
     """ Returns json for the given query """
-    def search_videos(self, query, results_per_page, page):
+    def search_videos(self, query, results_per_page=15, page=1):
         query = query.replace(" ", "+")
         url = "https://api.pexels.com/videos/search?query={}&per_page={}&page={}".format(query, results_per_page, page)
         self.__request(url)
