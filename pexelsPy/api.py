@@ -9,7 +9,6 @@
 import requests
 from .tools import Photo
 from .tools import Video
-# PEXELS_API_KEY = 563492ad6f917000010000018ca4bda6c16d463a9f7e97551aa21ffd
 """ Class """
 class API:
     def __init__(self, PEXELS_API_KEY):
@@ -25,7 +24,7 @@ class API:
         self.prev_page = None
 
     """ Returns json for the given query """
-    def search_photos(self, query, results_per_page=15, page=1):
+    def search_photos(self, query, results_per_page, page):
         query = query.replace(" ", "+")
         url = "https://api.pexels.com/v1/search?query={}&per_page={}&page={}".format(query, results_per_page, page)
         self.__request(url)
@@ -33,21 +32,21 @@ class API:
         return None if not self.request else self.json
 
     """ Return json with popular photos of the current page """
-    def popular_photos(self, results_per_page=15, page=1):
+    def popular_photos(self, results_per_page, page):
         url = "https://api.pexels.com/v1/popular?per_page={}&page={}".format(results_per_page, page)
         self.__request(url)
         # If there is no json data return None
         return None if not self.request else self.json
 
     """ Return json with curated photos of the current page """
-    def curated_photos(self, results_per_page=15, page=1):
+    def curated_photos(self, results_per_page, page):
         url = "https://api.pexels.com/v1/curated?per_page={}&page={}".format(results_per_page, page)
         self.__request(url)
         # If there is no json data return None
         return None if not self.request else self.json
 
     """ Returns json for the given query """
-    def search_videos(self, query, results_per_page=15, page=1):
+    def search_videos(self, query, results_per_page, page):
         query = query.replace(" ", "+")
         url = "https://api.pexels.com/videos/search?query={}&per_page={}&page={}".format(query, results_per_page, page)
         self.__request(url)
@@ -55,14 +54,14 @@ class API:
         return None if not self.request else self.json
 
     """ Return json with popular videos of the current page """
-    def popular_videos(self, results_per_page=15, page=1):
+    def popular_videos(self, results_per_page, page):
         url = "https://api.pexels.com/videos/popular?per_page={}&page={}".format(results_per_page, page)
         self.__request(url)
         # If there is no json data return None
         return None if not self.request else self.json
 
     """ Return json with curated videos of the current page """
-    def curated_videos(self, results_per_page=15, page=1):
+    def curated_videos(self, results_per_page, page):
         url = "https://api.pexels.com/videos/curated?per_page={}&page={}".format(results_per_page, page)
         self.__request(url)
         # If there is no json data return None
@@ -102,7 +101,7 @@ class API:
     """ Private methods """
     def __request(self, url):
         try:
-            self.request = requests.get(url, timeout=15, headers=self.PEXELS_AUTHORIZATION)
+            self.request = requests.get(url, timeout=10, headers=self.PEXELS_AUTHORIZATION)
             self.__update_page_properties()
         except requests.exceptions.RequestException:
             print("Request failed check your internet connection")
