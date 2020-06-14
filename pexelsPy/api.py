@@ -4,15 +4,13 @@
 #     Search photos using Pexels API v1
 #     Search popular photos using Pexels API v1
 #     Search curated photos using Pexels API v1
-# Dependencies:
-#     requests
 import requests
-from .tools import Photo
-from .tools import Video
+from .src import Photo
+from .src import Video
 """ Class """
 class API:
-    def __init__(self, PEXELS_API_KEY):
-        self.PEXELS_AUTHORIZATION = {"Authorization":PEXELS_API_KEY}
+    def __init__(self, PEXELS_API):
+        self.PEXELS_AUTHORIZATION = {"Authorization":PEXELS_API}
         self.request = None
         self.json = None
         self.page = None

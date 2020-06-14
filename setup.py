@@ -5,25 +5,19 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pexelsPy",
-    version="1.0.0",
-    author="Sravan Kumar Shaganti",
+    version="1.0",
+    author="Sravan Kumar",
     author_email="demonlyf98@protonmail.com",
     description="Use Pexels API v1 with Python",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/kingsamurai123/pexels-api",
-    keywords='pexels api images photos videos',
+    keywords='pexels api images photos videos python',
     install_requires=['requests'],
     packages=setuptools.find_packages(),
-    
-)
-"""
-setuptools.setup(
-classifiers=[
+    classifiers=[
         "Programming Language :: Python",
-        "License :: OSI Approved :: MIT License",
+        "License :: MIT License",
         "Operating System :: OS Independent",
     ],
 )
-
-"""
