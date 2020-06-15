@@ -45,9 +45,10 @@ for _ in page_number:
         print("\ttiny: ", photo.tiny)
         print("\tportrait: ", photo.portrait)
         print("\tlandscape: ", photo.landscape)
+        print("-----------------------------------------------\n")
     # If there is no next page print the last page and end the loop
-    if not api.has_next_page:
-        print("Last page: ", api.page)
-        break
-    # Search next page
-    api.search_next_page()
+    # if not api.has_next_page:
+    #     print("Last page: ", api.page)
+    #     break
+    # # Search next page
+    # api.search_next_page()

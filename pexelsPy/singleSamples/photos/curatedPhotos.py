@@ -42,7 +42,7 @@ for _ in page_number:
         print("\tportrait: ", photo.portrait)
         print("\tlandscape: ", photo.landscape)
         print("-----------------------------------------------\n")
-    print("Page Number: ",api.page)
+    # print("Page Number: ",api.page)
     # If there is no previous page print the first page and end the loop
     # if not api.has_previous_page:
     #     print("First page: ", api.page)
