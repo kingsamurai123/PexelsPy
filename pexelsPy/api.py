@@ -15,7 +15,8 @@ class API:
         self.json = None
         self.page = None
         self.total_results = None
-        self.page_results = None
+        self.photo_results = None
+        self.video_results = None
         self.has_next_page = None
         self.has_previous_page = None
         self.next_page = None
@@ -117,10 +118,13 @@ class API:
             except:
                 self.total_results = None
             try:
-                self.page_results = len(self.json["photos"])
-                self.page_results = len(self.json["videos"])
+                self.photo_results = len(self.json["photos"])
             except:
-                self.page_results = None
+                self.photo_results = None
+            try:
+                self.video_results = len(self.json["videos"])
+            except:
+                self.video_results = None
             try:
                 self.next_page = self.json["next_page"]
                 self.has_next_page = True

@@ -1,5 +1,4 @@
 *.pyc
-pexelsPy/singleSamples/
 PEXELS_API_KEY
 /dist/
 /pexelsPy.egg-info/
