@@ -15,7 +15,7 @@ date = datetime.now()
 #directory variables
 directory_name = date.strftime("%b-%d-%Y")   #directory name is same as the execution date
 filename = date.strftime("%H-%M-%S")
-filename = (filename+" popular.txt")
+filename = (filename+" PhotoPopularResults.txt")
 home = os.environ.get("HOME")    #to retrieve the home directory using inbuilt home variable
 
 #Page number should be >= 1 or a response errror 500 is returned. Sooooo..
