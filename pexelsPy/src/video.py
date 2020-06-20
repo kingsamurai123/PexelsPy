@@ -22,6 +22,7 @@ class Video:
     @property
     def duration(self):
         return self.__video["duration"]
+    #USER DETAILS
     @property
     def userID(self):
         return int(self.__video["user"]["id"])
@@ -31,6 +32,7 @@ class Video:
     @property
     def userURL(self):
         return self.__video["user"]["url"]
+    #VIDEO FILES
     @property
     def videoFilesID(self):
         return int(self.__video["video_files"]["id"])
@@ -42,15 +44,16 @@ class Video:
         return self.__video["video_files"]["file_type"]
     @property
     def videoFileWidth(self):
-        return int(ideo["video_files"]["width"])
+        return int(self.__video["video_files"]["width"])
     @property
     def videoFilesHeight(self):
         return int(self.__video["video_files"]["height"])
     @property
     def videoFilesLink(self):
         return self.__video["video_files"]["link"]
+    #Video PICTURES
     @property
-    def videoPictures(self):
+    def videoPicturesID(self):
         return int(self.__video["video_pictures"]["id"])
     @property
     def videoPictures(self):

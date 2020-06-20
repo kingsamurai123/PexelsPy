@@ -1,4 +1,4 @@
-# Pexels Website:   https://www.pexels.com
+f# Pexels Website:   https://www.pexels.com
 # class information:
 #     Get json data from https://www.pexels.com
 #     Search photos using Pexels API v1
@@ -23,7 +23,7 @@ class API:
         self.prev_page = None
 
     """ Returns json for the given query """
-    def search_photos(self, query, results_per_page, page):
+    def search_photos(self, query, results_per_page=15, page=1):
         query = query.replace(" ", "+")
         url = "https://api.pexels.com/v1/search?query={}&per_page={}&page={}".format(query, results_per_page, page)
         self.__request(url)
@@ -31,14 +31,14 @@ class API:
         return None if not self.request else self.json
 
     """ Return json with popular photos of the current page """
-    def popular_photos(self, results_per_page, page):
+    def popular_photos(self, results_per_page=15, page=1):
         url = "https://api.pexels.com/v1/popular?per_page={}&page={}".format(results_per_page, page)
         self.__request(url)
         # If there is no json data return None
         return None if not self.request else self.json
 
     """ Return json with curated photos of the current page """
-    def curated_photos(self, results_per_page, page):
+    def curated_photos(self, results_per_page=15, page=1):
         url = "https://api.pexels.com/v1/curated?per_page={}&page={}".format(results_per_page, page)
         self.__request(url)
         # If there is no json data return None
@@ -53,14 +53,14 @@ class API:
         return None if not self.request else self.json
 
     """ Return json with popular videos of the current page """
-    def popular_videos(self, results_per_page, page):
+    def popular_videos(self, results_per_page=15, page=1):
         url = "https://api.pexels.com/videos/popular?per_page={}&page={}".format(results_per_page, page)
         self.__request(url)
         # If there is no json data return None
         return None if not self.request else self.json
 
     """ Return json with curated videos of the current page """
-    def curated_videos(self, results_per_page, page):
+    def curated_videos(self, results_per_page=15, page=1):
         url = "https://api.pexels.com/videos/curated?per_page={}&page={}".format(results_per_page, page)
         self.__request(url)
         # If there is no json data return None
