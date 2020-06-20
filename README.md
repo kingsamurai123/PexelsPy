@@ -5,6 +5,9 @@ A Python package form API for pexels website. All the variables in the documenta
 ```python
 pip install pexelsPY
 ```
+# Credits
+- Photo source [AguilarLagunasArturo](https://github.com/AguilarLagunasArturo)
+- Thanks for clearing my doubts [RRRohit7](https://github.com/RRRohit7)
 
 # Sample Program
 This is a sample program to run in your terminal.
@@ -49,4 +52,6 @@ Example: ```python popularPhotos.py 2 2```
 syntax: ```python curatedPhotos.py page_number_you_want_to_search number_of_images_you_need```\
 Example: ```python curatedPhotos.py 2 2```
 
-
+# References
+- Stackoverflow
+- [Photo Source](https://github.com/AguilarLagunasArturo/pexels-api)
